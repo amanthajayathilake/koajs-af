@@ -37,7 +37,7 @@ const ViewStudent = () => {
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">View Student</h2>
+        <h2 className="text-center mb-4">View Student - {student.name}({student.id})</h2>
         <div class="input-group input-group-lg">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default" style={{width:100, fontWeight: 700}}>Id</span>
