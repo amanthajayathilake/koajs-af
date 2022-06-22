@@ -1,15 +1,16 @@
 ﻿### 👋 SETUP, 👋
 
-Clone the repo first - https://github.com/amanthajayathilake/koajs-af.git . Then run the following commands >
+Clone the repo first - https://github.com/amanthajayathilake/koajs-af.git
 
 🚀 Change monogodb url from the .env file first. 🚀
+🚀 Then run the following commands ;) 🚀
 
-﻿### New Terminal
+<b>New Terminal</b>
 - **cd client**
 - **npm i**
 - **npm start**
 
-﻿### New Terminal
+<b>New Terminal</b>
 - **cd server**
 - **npm i**
 - **npm start**
