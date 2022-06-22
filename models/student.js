@@ -1,11 +1,12 @@
 const { Schema, model } = require("../db-con");
 
 const studentSchema = new Schema({
-  attendees: String,
-  name: String,
-  adultsOnly: String,
-  description: String,
-  organizers: String,
+  id: { type: String, required: true, unique: true },
+  name: { type: String, required: true },
+  age: { type: Number },
+  gender: { type: Number },
+  contact: { type: String },
+  address: {type: String}
 });
 
 const Students = model("Students", studentSchema);
