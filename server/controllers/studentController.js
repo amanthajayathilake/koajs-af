@@ -61,26 +61,6 @@ exports.deleteStudent = async ctx => {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const parse = require('co-body');
 
 // const getStudents = async (ctx) => {
