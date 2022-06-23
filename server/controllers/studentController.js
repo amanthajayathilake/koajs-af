@@ -2,12 +2,12 @@ const Students = require("../models/student");
 
 exports.getStudents = async ctx => {
   try {
-    const users = await Students.find({})
-    if (users) {
-        ctx.body = users;
+    const std = await Students.find({})
+    if (std) {
+        ctx.body = std;
         // ctx.body = "Success!";
     } else {
-        throw new Error('Unable to fetch list of user')
+        throw new Error('Unable to fetch list of Students')
     }
   } catch (err) {
     ctx.throw(422)
@@ -16,9 +16,9 @@ exports.getStudents = async ctx => {
 
 exports.addStudent = async ctx => {
     try {
-      const user = await new Students(ctx.request.body).save();
+      const std = await new Students(ctx.request.body).save();
       ctx.body = "Success!";
-      ctx.body = user
+      ctx.body = std
     } catch (err) {
       ctx.throw(422)
     }
@@ -27,9 +27,9 @@ exports.addStudent = async ctx => {
 exports.getStudent = async ctx => {
     try {
       const id = ctx.params.id
-      const user = await Students.findById(id)
+      const std = await Students.findById(id)
       ctx.body = "Success!";
-      ctx.body = user
+      ctx.body = std
     } catch (err) {
       ctx.throw(422)
     }
@@ -40,9 +40,9 @@ exports.updateStudent = async ctx => {
     try {
       const id = ctx.params.id
       const data = ctx.request.body
-      const user = await Students.findByIdAndUpdate({_id: id}, data, {new: true})
+      const std = await Students.findByIdAndUpdate({_id: id}, data, {new: true})
       ctx.body = "Success!";
-      ctx.body = user
+      ctx.body = std
     } catch (err) {
       ctx.throw(422)
     }
@@ -52,9 +52,9 @@ exports.deleteStudent = async ctx => {
     try 
       {
       const id = ctx.params.id      
-      const user = await Students.findByIdAndRemove({_id: id})
+      const std = await Students.findByIdAndRemove({_id: id})
       ctx.body = "Success!";
-      ctx.body = user;
+      ctx.body = std;
       ctx.response.status = 200
     } catch (err) {
         ctx.throw(422)
