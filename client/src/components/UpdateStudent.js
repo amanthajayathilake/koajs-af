@@ -32,9 +32,19 @@ const UpdateStudent = () => {
   }; 
   console.log(student._id);
 
-  const onSubmit = (e) => {
+  const onSubmit = async e => {
     e.preventDefault();
-    axios.put(`http://localhost:3001/students/${student.id}`);
+    // axios.put(`http://localhost:3001/students/${student._id}`);
+
+    const studentObj = {
+      id: student.id,
+      name: name,
+      age: age,
+      gender: gender,
+      contact: contact,
+      address: address
+    }
+    await StudentService.updateStudent(studentObj, student._id);
     window.location.replace('/');
   };
   
