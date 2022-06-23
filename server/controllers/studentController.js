@@ -43,17 +43,17 @@ const getStudent = async (ctx) => {
 
 const updateStudent = (ctx) =>{
   const filter = {id: ctx.params.id || 'invalidId'};
-  const statusDetails = {
+  const stdObj = {
       name: ctx.request.body.name,
       age: ctx.request.body.age,
       gender: ctx.request.body.gender,
       contact: ctx.request.body.contact,
       address: ctx.request.body.address
   }
-  Students.findByIdAndUpdate(filter, statusDetails, (error, reservationDetails) =>{
+  Students.findByIdAndUpdate(filter, stdObj, (error, stdDetails) =>{
     console.log(filter)
     console.log(ctx.request.body.id)
-      !reservationDetails ?
+      !stdDetails ?
       ctx.status = 404:
       ctx.status = 200 
   });   
@@ -61,8 +61,8 @@ const updateStudent = (ctx) =>{
 
 // const deleteStudent = (ctx) =>{
 //   const filter = {id: ctx.params.id};
-//   Students.findOneAndDelete(filter, (error, reservationDetails) =>{
-//     !reservationDetails ?
+//   Students.findOneAndDelete(filter, (error, stdDetails) =>{
+//     !stdDetails ?
 //     ctx.status = 404:
 //     ctx.status = 200 
 //   })
